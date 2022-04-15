@@ -1,6 +1,6 @@
 
 
-public class Name {
+public class Name  {
 
     public static void main(String[] args) {
         String message = "Привет Паша.";
