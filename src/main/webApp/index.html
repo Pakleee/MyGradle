@@ -2,16 +2,20 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Первый сервер</title>
 </head>
-Кошачий сервер!
 <body>
-Привет Всем!!
+<h1>Продовольственно-кошачий сервер!</h1>
+<div>
+    <form action="./cat">
+        <label for="name">Поиск продукта:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <input type="submit" value="Отправить"><br>
+    </form>
+</div>
 <p><a href="./persi.jpg">Переход на фото кота</a></p>
-<p><a href="./test">Переход на тест</a></p>
-<p><a href="./test?param=yes">Если хотите сказать Да!</a></p>
-<p><a href="./test?param=no">Если хотите сказать Нет!</a></p>
-
+<p><a href="./cat?name=persi">Узнать имя кота?</a></p>
+<p><a href="./addProduct.html">Страничка для менеджера</a></p>
 
 </body>
 </html>
