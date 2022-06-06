@@ -1,3 +1,5 @@
+package servlets.servlet;
+
 import product.Product;
 import product.ProductService;
 
@@ -34,8 +36,8 @@ public class ServletCatName extends HttpServlet {
 
         Product foundProduct = product.get(productName);
 
-        if (foundProduct !=null){
-            response.getWriter().append("<html><head>\n" + " </head><body><p>" +"Name: "+ foundProduct.getName()+"<p> Price: "+foundProduct.getPrice()+"p</p>"+"<p> Category: "+foundProduct.getCategory()+"</p>"+" Discount: "+foundProduct.getDiscount()+"%" +"</p><p><a href=\"./\">Return back</a></p></MyGradle><html>");
+        if (foundProduct != null) {
+            response.getWriter().append("<html><head>\n" + " </head><body><p>" + "Name: " + foundProduct.getName() + "<p> Price: " + foundProduct.getPrice() + "p</p>" + "<p> Category: " + foundProduct.getCategory() + "</p>" + " Discount: " + foundProduct.getDiscount() + "%" + "</p><p><a href=\"./\">Return back</a></p></MyGradle><html>");
         } else if ("persi".equalsIgnoreCase(productName)) {
             response.getWriter().append("<html><head>\n" + " </head><body><p> <h3>His name is Persi!</h3> </p><p><a href=\"./\">Return back</a></p></MyGradle><html>");
         } else {
@@ -45,7 +47,7 @@ public class ServletCatName extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws  IOException {
+            throws IOException {
 
 
         String pName = req.getParameter("name");
@@ -54,12 +56,12 @@ public class ServletCatName extends HttpServlet {
         String pState = req.getParameter("state");
         String pDiscount = req.getParameter("discount");
 
-        Product product = new Product(pName,Double.valueOf(pPrice),pCategory,pState,Double.valueOf(pDiscount));
+        Product product = new Product(pName, Double.valueOf(pPrice), pCategory, pState, Double.valueOf(pDiscount));
 
         Product productAdd = ProductService.add(product);
-        if (productAdd!=null){
-            resp.getWriter().append("<html><head>\n" + " </head><body><p> product add </p><p><a href=\"./\">Return back</a></p></MyGradle/addProduct><html>");}
-        else {
+        if (productAdd != null) {
+            resp.getWriter().append("<html><head>\n" + " </head><body><p> product add </p><p><a href=\"./\">Return back</a></p></MyGradle/addProduct><html>");
+        } else {
             resp.getWriter().append("<html><head>\n" + " </head><body><p>Missing product information </p><p><a href=\"./\">Return back</a></p></MyGradle><html>");
         }
 
